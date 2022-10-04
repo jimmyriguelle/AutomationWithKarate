@@ -10,8 +10,8 @@ Feature: Validate API Call for POST PET
     And method POST
     Then status 200
     And print response
-
-  Scenario: POST - Pet : Validate status code
+  @tag2
+  Scenario: POST - Pet : Print Status Code
     Given path 'pet'
     When request read('post-pet.json')
     And method POST

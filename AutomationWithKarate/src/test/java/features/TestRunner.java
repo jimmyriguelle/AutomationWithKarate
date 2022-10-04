@@ -23,6 +23,14 @@ public class TestRunner {
     Karate get() {
         return Karate.run("get-pet").relativeTo(getClass());
     }
+    @Karate.Test
+    Karate testTags() {
+        return Karate.run("post-pet").tags("@tag1").relativeTo(getClass());
+    }
+    @Karate.Test
+    Karate testTag2() {
+        return Karate.run("post-pet").tags("@tag2").relativeTo(getClass());
+    }
     
     @Test
     public void testParallel() {
