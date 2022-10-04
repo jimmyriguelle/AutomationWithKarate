@@ -17,7 +17,8 @@ import org.junit.Test;
 public class TestRunner {
 	@Karate.Test
 	Karate allPost() {
-        return Karate.run("post-pet").relativeTo(getClass());
+        return Karate.run("post-pet").relativeTo(getClass()); 
+        //il est possible de mettre plusieurs files : return Karate.run("post-pet, get-pet").relativeTo(getClass());
     }
     @Karate.Test
     Karate get() {
@@ -30,6 +31,10 @@ public class TestRunner {
     @Karate.Test
     Karate testTag2() {
         return Karate.run("post-pet").tags("@tag2").relativeTo(getClass());
+    }
+    @Karate.Test
+    Karate multiTags() {
+        return Karate.run("post-pet").tags("@tag2, @tag3").relativeTo(getClass());
     }
 	@Karate.Test
 	Karate allGet() {
