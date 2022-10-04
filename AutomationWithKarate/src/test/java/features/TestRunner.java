@@ -31,12 +31,16 @@ public class TestRunner {
     Karate testTag2() {
         return Karate.run("post-pet").tags("@tag2").relativeTo(getClass());
     }
+    @Karate.Test
+    Karate testTag3() {
+        return Karate.run("post-pet").tags("@tag2").relativeTo(getClass());
+    }
     
     @Test
     public void testParallel() {
         Results results = Runner.path("classpath:features")
                 .outputCucumberJson(true)
-                .parallel(1);
+                .parallel(5);
         generateReport(results.getReportDir());
         assertTrue(results.getErrorMessages(), results.getFailCount() == 0);
     }
