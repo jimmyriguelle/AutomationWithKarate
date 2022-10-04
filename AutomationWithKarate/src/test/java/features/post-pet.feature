@@ -17,4 +17,4 @@ Feature: Validate API Call for POST PET
     And method POST
     Then status 200
     And print response
-    And print responseStatus
+    And print 'Le status code est : ' + responseStatus
