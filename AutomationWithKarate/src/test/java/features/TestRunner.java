@@ -1,9 +1,8 @@
-package pet;
+package features;
 
 import com.intuit.karate.junit5.Karate;
 
-public class PetTestRunner2 {
-    @Karate.Test
+public class TestRunner {
     Karate post() {
         return Karate.run("post-pet").relativeTo(getClass());
     }
@@ -11,4 +10,5 @@ public class PetTestRunner2 {
     Karate get() {
         return Karate.run("get-pet").relativeTo(getClass());
     } 
+
 }
