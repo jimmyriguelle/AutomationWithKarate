@@ -16,7 +16,7 @@ import org.junit.Test;
 
 public class TestRunner {
 	@Karate.Test
-	Karate post() {
+	Karate allPost() {
         return Karate.run("post-pet").relativeTo(getClass());
     }
     @Karate.Test
@@ -31,9 +31,13 @@ public class TestRunner {
     Karate testTag2() {
         return Karate.run("post-pet").tags("@tag2").relativeTo(getClass());
     }
+	@Karate.Test
+	Karate allGet() {
+        return Karate.run("get-pet").relativeTo(getClass());
+    }
     @Karate.Test
     Karate testTag3() {
-        return Karate.run("post-pet").tags("@tag2").relativeTo(getClass());
+        return Karate.run("post-pet").tags("@tag3").relativeTo(getClass());
     }
     
     @Test
