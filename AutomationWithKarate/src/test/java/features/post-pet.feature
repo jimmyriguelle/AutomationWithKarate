@@ -25,21 +25,21 @@ Feature: Validate API Call for POST PET
   @tag3
   Scenario: POST - Pet : Manipuler un ID dynamique dans la requete
     * def id = DataGenerator.getAnimalId()
-    * def name1 = DataGenerator.getAnimalName()
-    * def name2 = DataGenerator.getAnimalType()
+    * def name = DataGenerator.getAnimalName()
+    * def animalType = DataGenerator.getAnimalType()
     Given path 'pet'
-    * print 'Debug: Animal Id will be : ' + id
-    * print 'Debug: Animal Name will be : ' + name1
-    * print 'Debug: Animal Type will be : ' + name2
+    * print 'Debug purpose: Animal Id will be : ' + id
+    * print 'Debug purpose: Animal Name will be : ' + name
+    * print 'Debug purpose: Animal Type will be : ' + animalType
     When request
       """
       {
         "id": "#(id)",
         "category": {
           "id": 0,
-          "name": "#(name1)"
+          "name": "#(name)"
         },
-        "name": "#(name2)",
+        "name": "#(animalType)",
         "photoUrls": [
           "string"
         ],

@@ -8,7 +8,7 @@ public class DataGenerator {
 	
 	public static String getAnimalId() {
 		Faker faker = new Faker();
-		String id = faker.number().digits(3); 
+		String id = faker.number().digit(); 
 		return id;
 		
 	}
