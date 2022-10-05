@@ -44,7 +44,10 @@ public class TestRunner {
     Karate testTag3() {
         return Karate.run("post-pet").tags("@tag3").relativeTo(getClass());
     }
-    
+    @Karate.Test
+    Karate delete() {
+        return Karate.run("delete-pet").relativeTo(getClass());
+    }
     @Test
     public void testParallel() {
         Results results = Runner.path("classpath:features")
