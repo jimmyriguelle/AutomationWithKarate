@@ -64,4 +64,42 @@ Feature: Validate API Call for GET Pet
     Then status 200
     And print response
     And print response.id
+    
+  Scenario: POST/GET Pet : Creer dynamiquement un animal et le recuperer dynamiquement 
+    * def id = DataGenerator.getAnimalId()
+    * def name = DataGenerator.getAnimalName()
+    * def animalType = DataGenerator.getAnimalType()
+    Given path 'pet'
+    * print 'Debug purpose: Animal Id will be : ' + id
+    * print 'Debug purpose: Animal Name will be : ' + name
+    * print 'Debug purpose: Animal Type will be : ' + animalType
+    When request
+      """
+      {
+        "id": "#(id)",
+        "category": {
+          "id": 0,
+          "name": "#(name)"
+        },
+        "name": "#(animalType)",
+        "photoUrls": [
+          "string"
+        ],
+        "tags": [
+          {
+            "id": 0,
+            "name": "string"
+          }
+        ],
+        "status": "available"
+      }
+      """
+    And method POST
+    Then status 200
+    And print response
+    And print response.id
+    And url 'https://petstore.swagger.io/v2/pet/' + response.id
+    When method get
+    Then status 200
+    And print response
 
