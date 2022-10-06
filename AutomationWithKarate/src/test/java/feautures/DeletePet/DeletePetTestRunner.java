@@ -1,4 +1,4 @@
-package features.get_pet;
+package feautures.DeletePet;
 
 import com.intuit.karate.junit5.Karate;
 
@@ -14,21 +14,21 @@ import org.apache.commons.io.FileUtils;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class GetPetTestRunner {
+public class DeletePetTestRunner {
 	@Karate.Test
-	Karate allGet() {
-        return Karate.run("get-pet").relativeTo(getClass());
+	Karate allDelete() {
+        return Karate.run("delete-pet").relativeTo(getClass());
         //execute tous les tests present dans le feature file
         //il est possible de mettre plusieurs files : return Karate.run("post-pet, get-pet").relativeTo(getClass());
     }
 	
     @Karate.Test
-    Karate getByTag() {
-        return Karate.run("get-pet").tags("@tag1").relativeTo(getClass());
+    Karate deleteByTag() {
+        return Karate.run("delete-pet").tags("@tag1").relativeTo(getClass());
     }
  
     @Karate.Test
-    Karate getMultiTags() {
-        return Karate.run("get-pet").tags("@tag1, @tag2").relativeTo(getClass());
+    Karate deleteMultiTags() {
+        return Karate.run("delete-pet").tags("@tag1, @tag2").relativeTo(getClass());
     }
 }

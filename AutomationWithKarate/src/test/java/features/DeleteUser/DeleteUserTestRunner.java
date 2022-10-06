@@ -1,4 +1,4 @@
-package features.delete_user;
+package features.DeleteUser;
 
 import com.intuit.karate.junit5.Karate;
 

@@ -1,4 +1,4 @@
-package features.post_pet;
+package features.PostPet;
 
 import com.intuit.karate.junit5.Karate;
 

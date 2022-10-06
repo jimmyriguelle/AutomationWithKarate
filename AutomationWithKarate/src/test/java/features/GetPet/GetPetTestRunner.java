@@ -1,4 +1,4 @@
-package features.get_user;
+package features.GetPet;
 
 import com.intuit.karate.junit5.Karate;
 
@@ -14,21 +14,21 @@ import org.apache.commons.io.FileUtils;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class GetUserTestRunner {
+public class GetPetTestRunner {
 	@Karate.Test
 	Karate allGet() {
-        return Karate.run("get-user").relativeTo(getClass());
+        return Karate.run("get-pet").relativeTo(getClass());
         //execute tous les tests present dans le feature file
         //il est possible de mettre plusieurs files : return Karate.run("post-pet, get-pet").relativeTo(getClass());
     }
 	
     @Karate.Test
     Karate getByTag() {
-        return Karate.run("get-user").tags("@test").relativeTo(getClass());
+        return Karate.run("get-pet").tags("@tag1").relativeTo(getClass());
     }
  
     @Karate.Test
     Karate getMultiTags() {
-        return Karate.run("get-user").tags("@tag1, @tag2").relativeTo(getClass());
+        return Karate.run("get-pet").tags("@tag1, @tag2").relativeTo(getClass());
     }
 }

@@ -1,4 +1,4 @@
-package features.delete_pet;
+package features.PostUser;
 
 import com.intuit.karate.junit5.Karate;
 
@@ -14,21 +14,21 @@ import org.apache.commons.io.FileUtils;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class DeletePetTestRunner {
+public class PostUserTestRunner {
 	@Karate.Test
-	Karate allDelete() {
-        return Karate.run("delete-pet").relativeTo(getClass());
+	Karate allPost() {
+        return Karate.run("post-user").relativeTo(getClass());
         //execute tous les tests present dans le feature file
         //il est possible de mettre plusieurs files : return Karate.run("post-pet, get-pet").relativeTo(getClass());
     }
 	
     @Karate.Test
-    Karate deleteByTag() {
-        return Karate.run("delete-pet").tags("@tag1").relativeTo(getClass());
+    Karate postByTag() {
+        return Karate.run("post-user").tags("@test").relativeTo(getClass());
     }
  
     @Karate.Test
-    Karate deleteMultiTags() {
-        return Karate.run("delete-pet").tags("@tag1, @tag2").relativeTo(getClass());
+    Karate postMultiTags() {
+        return Karate.run("post-user").tags("@tag1, @tag2").relativeTo(getClass());
     }
 }

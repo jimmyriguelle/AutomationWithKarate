@@ -1,4 +1,4 @@
-package features.post_user;
+package features.GetUser;
 
 import com.intuit.karate.junit5.Karate;
 
@@ -14,21 +14,21 @@ import org.apache.commons.io.FileUtils;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
-public class PostUserTestRunner {
+public class GetUserTestRunner {
 	@Karate.Test
-	Karate allPost() {
-        return Karate.run("post-user").relativeTo(getClass());
+	Karate allGet() {
+        return Karate.run("get-user").relativeTo(getClass());
         //execute tous les tests present dans le feature file
         //il est possible de mettre plusieurs files : return Karate.run("post-pet, get-pet").relativeTo(getClass());
     }
 	
     @Karate.Test
-    Karate postByTag() {
-        return Karate.run("post-user").tags("@test").relativeTo(getClass());
+    Karate getByTag() {
+        return Karate.run("get-user").tags("@test").relativeTo(getClass());
     }
  
     @Karate.Test
-    Karate postMultiTags() {
-        return Karate.run("post-user").tags("@tag1, @tag2").relativeTo(getClass());
+    Karate getMultiTags() {
+        return Karate.run("get-user").tags("@tag1, @tag2").relativeTo(getClass());
     }
 }
