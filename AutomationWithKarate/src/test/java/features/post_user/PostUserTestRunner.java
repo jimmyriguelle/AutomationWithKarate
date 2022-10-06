@@ -24,7 +24,7 @@ public class PostUserTestRunner {
 	
     @Karate.Test
     Karate postByTag() {
-        return Karate.run("post-user").tags("@tag1").relativeTo(getClass());
+        return Karate.run("post-user").tags("@test").relativeTo(getClass());
     }
  
     @Karate.Test

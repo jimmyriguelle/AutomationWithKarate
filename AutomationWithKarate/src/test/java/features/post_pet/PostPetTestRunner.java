@@ -24,7 +24,7 @@ public class PostPetTestRunner {
 	
     @Karate.Test
     Karate postByTag() {
-        return Karate.run("post-pet").tags("@tag1").relativeTo(getClass());
+        return Karate.run("post-pet").tags("@test").relativeTo(getClass());
     }
  
     @Karate.Test
