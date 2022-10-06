@@ -1,10 +1,10 @@
-Feature: Helper for generate a Pet 
+@ignore
+Feature: Helper for generate a Pet
 
   Background: 
     * url 'https://petstore.swagger.io/v2'
     * def DataGenerator = Java.type('helpers.DataGenerator')
 
-@create
   Scenario: POST - Pet : Create a Pet dynamically
     * def randomAnimalId = DataGenerator.getAnimalId()
     * def randomAnimalName = DataGenerator.getAnimalName()
@@ -41,4 +41,3 @@ Feature: Helper for generate a Pet
     * def animalResponseName = response.category.name
     #* print 'Debug purpose ==> : ' + response.id
     #* print 'Debug purpose ==> : ' + response.category.name 
-
