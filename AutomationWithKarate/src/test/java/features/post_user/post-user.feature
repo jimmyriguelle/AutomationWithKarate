@@ -43,4 +43,4 @@ Feature:
     When request read('user.json')
     And method POST
     Then status 200
-    And print response
+
